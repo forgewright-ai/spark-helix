@@ -12,4 +12,6 @@
   include); the snippet's comment block is the help.
 - The pty test (`tests/helix_pty.py`) drives a real helix with the
   repo's spark.toml as its very config, against a stub spark; CI runs
-  it on Ubuntu (the PPA), Arch (`helix`) and macOS (`hx`).
+  it on Ubuntu (snap), Arch (`helix`) and macOS (`hx`). The floor is
+  helix 25.01: 24.7 rejects a macro inside a key menu, and the test
+  skips below the floor as it does without helix at all.

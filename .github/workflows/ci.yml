@@ -24,7 +24,7 @@ jobs:
           for f in README.md CHANGELOG.md CREDITS.md LICENSE spark.toml; do
             ! LC_ALL=C grep -n "[^ -~${tab}]" "$f"; done
       - name: helix
-        run: sudo add-apt-repository -y ppa:maveonair/helix-editor >/dev/null 2>&1 && sudo apt-get install -y -qq helix >/dev/null && hx --version
+        run: sudo snap install helix --classic >/dev/null && hx --version
       - name: the plugin in a pty
         run: python3 tests/helix_pty.py
   arch:

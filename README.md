@@ -19,8 +19,8 @@ surprise. A macro cannot hook the cursor, so there is no completion here
 ## Install
 
 You need spark 1.7 or newer on this machine (`spark edit -h` answers), and
-helix 23.03 or newer (`hx --version`; Arch names the binary `helix`).
-Then:
+helix 25.01 or newer (`hx --version`; 24.7 rejects a macro in a key menu;
+Arch names the binary `helix`). Then:
 
 ```sh
 git clone https://github.com/forgewright-ai/spark-helix ~/.config/helix/spark
@@ -33,9 +33,8 @@ keys is the help. An update is `git -C ~/.config/helix/spark pull`, then
 re-paste what changed. A-s is the suggestion -- name the table any key
 you like.
 
-On Ubuntu, helix is not in the archives: the maintained PPA
-(`sudo add-apt-repository ppa:maveonair/helix-editor`) or
-`sudo snap install helix --classic` gets it.
+On Ubuntu, helix is not in the archives: `sudo snap install helix
+--classic` tracks the current stable (the PPA lags behind the floor).
 
 ## What leaves this machine
 

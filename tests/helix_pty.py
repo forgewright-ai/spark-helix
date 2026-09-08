@@ -20,6 +20,7 @@ import pty
 import select
 import shutil
 import struct
+import subprocess
 import sys
 import tempfile
 import termios
@@ -98,7 +99,13 @@ class Editor:
 def main():
     hx = shutil.which("hx") or shutil.which("helix")
     if not hx:
-        print("helix_pty: helix is not installed here -- skipped (brew install helix / pacman -S helix / the PPA)")
+        print("helix_pty: helix is not installed here -- skipped (brew install helix / pacman -S helix / snap install helix)")
+        return 0
+    ver = subprocess.run([hx, "--version"], stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT).stdout.decode()
+    m = re.search(r"helix (\d+)\.(\d+)", ver)
+    if not m or (int(m.group(1)), int(m.group(2))) < (25, 1):
+        print("helix_pty: helix 25.01 is the floor (a macro in a key menu) -- skipped (%s)" % ver.strip())
         return 0
     fail = 0
 

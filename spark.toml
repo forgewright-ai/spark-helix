@@ -13,8 +13,8 @@
 # Nothing runs until you press Enter; u undoes any of them. A macro
 # cannot hook the cursor, so there is no completion here. What leaves
 # this machine: the piped text, to the brain spark is configured for --
-# helix's pipe carries no file name, so not even that. Needs helix 23.03
-# or newer and spark 1.7 or newer.
+# helix's pipe carries no file name, so not even that. Needs helix 25.01
+# or newer (24.7 rejects a macro in a key menu) and spark 1.7 or newer.
 
 [keys.normal.A-s]
 r = "@%:pipe spark edit "
