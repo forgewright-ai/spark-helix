@@ -1,0 +1,27 @@
+# spark in helix -- your own AI, on your own machine (spark.forgewright.ai).
+# helix has no include: paste the blocks below into your config.toml
+# (:config-open, paste, :config-reload). A-s opens a little spark menu;
+# where words are needed the command line is left open -- type them,
+# press Enter:
+#
+#   A-s r   rewrite the whole file:   :pipe spark edit <words>
+#   A-s s   rewrite the selection:    :pipe spark edit --part <words>
+#   A-s a   ask about the selection:  the answer lands after it in the
+#           buffer -- read it, then u removes it
+#   A-s f   fix spelling and punctuation, whole file, one keystroke
+#
+# Nothing runs until you press Enter; u undoes any of them. A macro
+# cannot hook the cursor, so there is no completion here. What leaves
+# this machine: the piped text, to the brain spark is configured for --
+# helix's pipe carries no file name, so not even that. Needs helix 23.03
+# or newer and spark 1.7 or newer.
+
+[keys.normal.A-s]
+r = "@%:pipe spark edit "
+s = "@:pipe spark edit --part "
+a = "@:append-output spark edit ? "
+f = "@%:pipe spark edit fix spelling and punctuation<ret>"
+
+[keys.select.A-s]
+s = "@:pipe spark edit --part "
+a = "@:append-output spark edit ? "
