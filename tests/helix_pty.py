@@ -144,7 +144,10 @@ def main():
             with open(note, "w") as f:
                 f.write(text)
             m = Editor(argv, env, work)
-            ok(m.expect(text.splitlines()[0]), "helix draws the file")
+            # a cold helix (first run on a fresh runner) can take a while
+            # to take the tty: keys sent before that echo back unseen
+            ok(m.expect(text.splitlines()[0], 30), "helix draws the file", m.plain()[-300:])
+            time.sleep(0.3)
             m.mark()
             return m
 
