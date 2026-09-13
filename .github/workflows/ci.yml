@@ -21,7 +21,7 @@ jobs:
       - name: ascii docs
         run: |
           tab=$(printf '\t')
-          for f in README.md CHANGELOG.md CREDITS.md LICENSE spark.toml; do
+          for f in README.md CHANGELOG.md CHEATSHEET.md CREDITS.md LICENSE spark.toml; do
             ! LC_ALL=C grep -n "[^ -~${tab}]" "$f"; done
       - name: helix
         run: sudo snap install helix --classic >/dev/null && hx --version
