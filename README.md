@@ -31,7 +31,7 @@ and paste the two `[keys...]` blocks from `spark.toml` into your
 include, so one line became one small block; the comment block above the
 keys is the help. An update is `git -C ~/.config/helix/spark pull`, then
 re-paste what changed. A-s is the suggestion -- name the table any key
-you like.
+you like. The keys, and what to ask: `CHEATSHEET.md`.
 
 On Ubuntu, helix is not in the archives: `sudo snap install helix
 --classic` tracks the current stable (the PPA lags behind the floor).
