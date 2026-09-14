@@ -56,6 +56,9 @@ By example
     A-s s translate to Portuguese   the selection, in Portuguese
     A-s a is the title too long     a question; u removes the answer
     A-s f                           the one-keystroke cleanup
+    a summary?     A-s a summarize this -- the ASK key: the answer
+                   lands after the selection, u removes it. On r/s
+                   the words REPLACE the text (u undoes).
 
 The comment block above the keys in `spark.toml` is the help; the
 key is a suggestion -- name the table any key you like.
